@@ -1,8 +1,8 @@
 name: "security-checkpoint"
 description: "Check for vulnerabilities in go and node apps"
 inputs:
-  shell:
-    description: "which auditing system to use"
+  manager:
+    description: "which auditing system to use based on package manager: go, npm"
     required: true
     default: "."
 runs:
@@ -12,4 +12,4 @@ runs:
       shell: bash
       run: ${{ github.action_path }}/security.sh
       env:
-        SHELL_INPUT: ${{ inputs.shell }}
+        PACKAGE_MANAGER: ${{ inputs.manager }}
