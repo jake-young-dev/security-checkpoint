@@ -11,7 +11,7 @@ echo "Auditing project with $SHELL_INPUT"
 
 if [[ "$SHELL_INPUT" == "npm" ]]; then
     VULNS=$(npm audit)
-    if [[ "$VULNS" == "found 0 vulnerabilities"]]; then
+    if [[ "$VULNS" == "found 0 vulnerabilities" ]]; then
         echo "No vulnerabilities found, audit passed!"
         exit 0
     else
