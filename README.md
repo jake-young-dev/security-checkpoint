@@ -2,7 +2,11 @@
 github action to ensure projects have no vulnerabilities
 
 # Inputs
- - [shell] Required, the tool to use for vulnerability scans. Available options are go, npm
+ - [manager] Required, vulnerability scans are made using tools based off of package manager (go|npm).
 
 # Requirements
 Package managers must be installed before running this action
+
+# Managers
+- [go] govulncheck
+- [npm] npm audit
