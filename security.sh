@@ -22,7 +22,7 @@ if [[ "$SHELL_INPUT" == "npm" ]]; then
 fi
 
 if [[ "$SHELL_INPUT" == "go" ]]; then
-    VULNS=$(govulncheck ./...)
+    VULNS=$(govulncheck -show verbose ./...)
     if [ $? -eq 0 ]; then
         echo "No vulnerabilities found, audit passed!"
         exit 0
