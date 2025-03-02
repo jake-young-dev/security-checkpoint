@@ -2,7 +2,7 @@ name: "security-checkpoint"
 description: "Check for vulnerabilities in go and node apps"
 inputs:
   manager:
-    description: "which auditing system to use based on package manager: go, npm"
+    description: "which auditing system to use based on package manager (e.g. go, npm)"
     required: true
     default: "."
 runs:
