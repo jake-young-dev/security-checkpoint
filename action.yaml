@@ -1,0 +1,15 @@
+name: "security-checkpoint"
+description: "Check for vulnerabilities in go and node apps"
+inputs:
+  shell:
+    description: "which auditing system to use"
+    required: true
+    default: "."
+runs:
+  using: composite
+  steps:
+    - name: "run script"
+      shell: bash
+      run: ${{ github.action_path }}/security.sh
+      env:
+        SHELL_INPUT: ${{ inputs.shell }}
