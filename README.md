@@ -1,5 +1,5 @@
 # security-checkpoint
-github action to ensure projects have no vulnerabilities
+github action to ensure projects have no vulnerabilities for security-minded applications
 
 # Usage
 ## Inputs
