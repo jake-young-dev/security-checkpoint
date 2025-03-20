@@ -18,9 +18,14 @@ if [[ "$PACKAGE_MANAGER" == "npm" ]]; then
         echo "No vulnerabilities found, audit passed!"
         exit 0
     else
-        echo "FATAL: Vulnerabilities found, details below"
-        echo "$VULNS"
-        exit 1
+        if [[ "$ERROR_ON_VULN" == "no" ]]; then
+            echo "$VULNS"
+            exit 0
+        else
+            echo "FATAL: Vulnerabilities found, details below"
+            echo "$VULNS"
+            exit 1
+        fi
     fi
 fi
 
@@ -32,9 +37,14 @@ if [[ "$PACKAGE_MANAGER" == "go" ]]; then
         echo "No vulnerabilities found, audit passed!"
         exit 0
     else
-        echo "FATAL: Vulnerabilities found, details below"
-        echo "$VULNS"
-        exit 1
+        if [[ "$ERROR_ON_VULN" == "no" ]]; then
+            echo "$VULNS"
+            exit 0
+        else
+            echo "FATAL: Vulnerabilities found, details below"
+            echo "$VULNS"
+            exit 1
+        fi
     fi
 fi
 

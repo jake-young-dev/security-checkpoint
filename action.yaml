@@ -2,9 +2,13 @@ name: "security-checkpoint"
 description: "Check for vulnerabilities in go and node apps"
 inputs:
   manager:
-    description: "which auditing system to use based on package manager (e.g. go, npm)"
+    description: "which auditing system to use, based on package manager. Available options are (go|npm)"
     required: true
     default: "."
+  panic:
+    description: "determines whether the workflow fails when vulnerabilities are found (yes|no)"
+    required: true
+    default: "yes"
 runs:
   using: composite
   steps:
@@ -13,3 +17,4 @@ runs:
       run: ${{ github.action_path }}/security.sh
       env:
         PACKAGE_MANAGER: ${{ inputs.manager }}
+        ERROR_ON_VULN: ${{ inputs.panic }}
