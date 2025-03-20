@@ -1,9 +1,16 @@
 # security-checkpoint
-github action to scan node and go apps for vulnerabilities, simple and fast
+github action to ensure projects have no vulnerabilities for security-minded applications
 
-# Inputs
+# Usage
+## Inputs
  - [manager] Required, vulnerability scans are made using tools based off of package manager (go|npm).
- - [panic] Required, determines if a found vulnerability will cause the workflow to fail, defaults to yes (yes|no).
+## Example
+```
+- name: "Check for vulns"
+  uses: https://github.com/jake-young-dev/security-checkpoint@master #use a tag
+  with:
+   manager: npm
+```
 
 # Requirements
 Package managers must be installed before running this action
